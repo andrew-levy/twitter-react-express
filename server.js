@@ -54,11 +54,6 @@ app.post('/api/world', (req, res) => {
 		  	}
 		}
 
-
-
-
-
-
 // tweet via command line if needed //
 
 //   const command = "node reactbot.js " +  `${req.body.post}`;
