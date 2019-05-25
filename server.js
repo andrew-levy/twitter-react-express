@@ -59,23 +59,21 @@ app.post('/api/world', (req, res) => {
 
 
 
+// tweet via command line if needed //
 
+//   const command = "node reactbot.js " +  `${req.body.post}`;
 
-  // const command = "node reactbot.js " +  `${req.body.post}`;
+//   cp.exec(command, (error, stdout, stderr) => {
 
+//   if (error) {
+//     console.error(`exec error: ${error}`);
+//     return;
+//   }
+//   console.log(`stdout: ${stdout}`);
+//   console.log(`stderr: ${stderr}`);
+//   });
 
-
-  // cp.exec(command, (error, stdout, stderr) => {
-
-
-  if (error) {
-    console.error(`exec error: ${error}`);
-    return;
-  }
-  console.log(`stdout: ${stdout}`);
-  console.log(`stderr: ${stderr}`);
-  });
-});
+ });
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
