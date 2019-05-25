@@ -38,34 +38,34 @@ app.post('/api/world', (req, res) => {
 // tweet
 
 
-		// var tweet = { 
-		// 	status:  `${req.body.post}`
-		// }
+		var tweet = { 
+			status:  `${req.body.post}`
+		}
 
-		// T.post('statuses/update', tweet, tweeted);
-
-
-		// function tweeted (err, data, response) {
-		// 	if(err){
-		// 		console.log('Tweet could not be sent');
-		// 	}
-		//   	else{
-		//   		console.log('Tweet sent');
-		//   	}
-		// }
+		T.post('statuses/update', tweet, tweeted);
 
 
+		function tweeted (err, data, response) {
+			if(err){
+				console.log('Tweet could not be sent');
+			}
+		  	else{
+		  		console.log('Tweet sent');
+		  	}
+		}
 
 
 
 
 
 
-  const command = "node reactbot.js " +  `${req.body.post}`;
+
+
+  // const command = "node reactbot.js " +  `${req.body.post}`;
 
 
 
-  cp.exec(command, (error, stdout, stderr) => {
+  // cp.exec(command, (error, stdout, stderr) => {
 
 
   if (error) {
