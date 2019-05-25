@@ -4,6 +4,9 @@ import logo from './logo.svg';
 
 import './App.css';
 
+
+
+
 class App extends Component {
   state = {
     response: '',
@@ -40,6 +43,8 @@ class App extends Component {
     this.setState({ responseToPost: body });
   };
 
+
+
   render() {
     return (
       <div className="App">
@@ -56,22 +61,26 @@ class App extends Component {
           >
             WeeTweet Account
           </a>
-        </header>
+        
         <p>{this.state.response}</p>
         <form onSubmit={this.handleSubmit}>
           <p>
-            <strong>Tell the world!</strong>
+            <strong>What do you want to tell the world?</strong>
           </p>
           <input
             className="Input-box"
             type="text"
             value={this.state.post}
             onChange={e => this.setState({ post: e.target.value })}
-          />
-          <button className= "Tweet-btn" type="submit">Tweet it</button>
+          /> 
+  
+          <button className= "Tweet-btn" type="submit">Tweet it!</button>
         </form>
+
         <p>{this.state.responseToPost}</p>
-      </div>
+        </header>
+      </div> 
+
     );
   }
 }
