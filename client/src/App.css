@@ -19,6 +19,30 @@
   padding-bottom: 10px;
 }
 
+.Tweet-btn {
+
+  border: none;
+  color: white;
+  background-color: #282c34;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+   width: 50%;
+
+}
+
+.Input-box {
+ width: 50%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
 .App-link {
   color: #61dafb;
 }

@@ -46,28 +46,29 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Hello! Welcome to WeeTweet, the first twitter account that belongs to everyone. Tweet something below on behalf of the world.
           </p>
           <a
             className="App-link"
-            href="https://reactjs.org"
+            href="https://twitter.com/WeeTweet17"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            WeeTweet Account
           </a>
         </header>
         <p>{this.state.response}</p>
         <form onSubmit={this.handleSubmit}>
           <p>
-            <strong>Post to Server:</strong>
+            <strong>Tell the world!</strong>
           </p>
           <input
+            className="Input-box"
             type="text"
             value={this.state.post}
             onChange={e => this.setState({ post: e.target.value })}
           />
-          <button type="submit">Submit</button>
+          <button className= "Tweet-btn" type="submit">Tweet it</button>
         </form>
         <p>{this.state.responseToPost}</p>
       </div>
