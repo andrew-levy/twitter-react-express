@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cp = require('child_process');
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 const post = "";
 
 
@@ -29,7 +29,7 @@ app.get('/api/hello', (req, res) => {
   // res.send({ express: 'Hello From Express' });
 });
 
-app.post('/api/world', (req, res) => {
+app.post('/api/posts', (req, res) => {
   console.log(req.body);
   res.send(
     `Thanks for tweeting: ${req.body.post}`,
