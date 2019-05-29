@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import logo from './logo.svg';
+//import earth from './earth.svg';
 
 import './App.css';
 
@@ -9,10 +10,19 @@ import './App.css';
 
 class App extends Component {
   state = {
-    response: '',
+    response: "Today's Topic: Anything!",
     post: '',
     responseToPost: '',
+    sender: '',
   };
+
+
+  resetTextBox() {
+
+    this.setState({post: ""});
+    this.setState({sender: ""});
+
+  }
 
   componentDidMount() {
     this.callApi()
@@ -31,13 +41,15 @@ class App extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
+    this.resetTextBox();
     const response = await fetch('/api/world', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ post: this.state.post }),
+      body: JSON.stringify({ post: this.state.post + " -" + this.state.sender}),
     });
+
     const body = await response.text();
 
     this.setState({ responseToPost: body });
@@ -51,8 +63,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hello! Welcome to WeeTweet, the first twitter account that belongs to everyone. Tweet something below on behalf of the world.
+          <p><strong style = {{color : "black"}}> WeeTweet</strong></p>
+          <p style ={{color : "black"}} >
+            Hello! Welcome to WeeTweet, the first twitter account that belongs to everyone. 
+          </p>
+           <p style ={{color : "black"}} >
+            
           </p>
           <a
             className="App-link"
@@ -63,16 +79,22 @@ class App extends Component {
             WeeTweet Account
           </a>
         
-        <p>{this.state.response}</p>
+        <p className = "Text-twitter-blue">{this.state.response}</p>
         <form onSubmit={this.handleSubmit}>
-          <p>
-            <strong>What do you want to tell the world?</strong>
+          <p style = {{color : "black"}}>What do you want to tell the world?
           </p>
           <input
-            className="Input-box"
+            className="Input-box-tweet"
             type="text"
             value={this.state.post}
             onChange={e => this.setState({ post: e.target.value })}
+          /> 
+          <p style = {{color : "black"}}>Name or Initials (optional)</p>
+          <input
+            className="Input-box-sender"
+            type="text"
+            value={this.state.sender}
+            onChange={e => this.setState({ sender: e.target.value })}
           /> 
   
           <button className= "Tweet-btn" type="submit">Tweet it!</button>

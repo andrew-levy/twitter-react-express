@@ -36,13 +36,11 @@ app.post('/api/world', (req, res) => {
   );
 
 // tweet
-
-
-		var tweet = { 
+  var tweet = { 
 			status:  `${req.body.post}`
-		}
+	}
 
-		T.post('statuses/update', tweet, tweeted);
+	T.post('statuses/update', tweet, tweeted);
 
 
 		function tweeted (err, data, response) {
