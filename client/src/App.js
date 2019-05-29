@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   callApi = async () => {
-    const response = await fetch('https://weetweet.herokuapp.com/api/hello');
+    const response = await fetch('/api/hello');
     const body = await response.json();
 
     if (response.status !== 200) throw Error(body.message);
@@ -31,7 +31,7 @@ class App extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    const response = await fetch('https://weetweet.herokuapp.com/api/posts', {
+    const response = await fetch('/api/posts', {
       method: 'POST',
       headers: {
         'Access-Control-Allow-Methods': '*',
