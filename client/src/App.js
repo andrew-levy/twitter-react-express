@@ -34,8 +34,7 @@ class App extends Component {
     const response = await fetch('/api/world', {
       method: 'POST',
       headers: {
-        'Access-Control-Allow-Methods': '*',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({ post: this.state.post }),
     });
