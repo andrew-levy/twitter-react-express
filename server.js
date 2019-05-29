@@ -29,7 +29,7 @@ app.get('/api/hello', (req, res) => {
   // res.send({ express: 'Hello From Express' });
 });
 
-app.post('/api/posts', (req, res) => {
+app.post('/api/world', (req, res) => {
   console.log(req.body);
   res.send(
     `Thanks for tweeting: ${req.body.post}`,
