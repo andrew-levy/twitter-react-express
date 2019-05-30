@@ -23,6 +23,11 @@
   color : #1da1f2;
 }
 
+.Text-title {
+  color : black;
+  font-size: 50px;
+}
+
 .Tweet-btn {
 
   border: none;

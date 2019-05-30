@@ -9,14 +9,20 @@ import './App.css';
 
 
 class App extends Component {
+
+
+  // states
   state = {
     response: "Today's Topic: Anything!",
     post: '',
     responseToPost: '',
     sender: '',
+    charCountText: 0,
+    charCountSender: 0,
+    goodToSubmit : false
   };
 
-
+  // reset the textboxes on subit
   resetTextBox() {
 
     this.setState({post: ""});
@@ -42,28 +48,40 @@ class App extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     this.resetTextBox();
+
+    var finalTweet = this.state.post
+
+    if (this.state.charCountSender > 0) {
+      finalTweet +=  " -" + this.state.sender;
+    }
+
     const response = await fetch('/api/world', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ post: this.state.post + " -" + this.state.sender}),
+      body: JSON.stringify({ post: finalTweet}),
     });
 
-    const body = await response.text();
 
+    const body = await response.text();
+      
     this.setState({ responseToPost: body });
-    
+
   };
 
 
 
   render() {
+
+    const countColor = this.state.charCountSender + this.state.charCountText >= 280 ? 'red' : 'black'
+
     return (
+      
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p><strong style = {{color : "black"}}> WeeTweet</strong></p>
+          <p className = "Text-title"> WeeTweet</p>
           <p style ={{color : "black"}} >
             Hello! Welcome to WeeTweet, the first twitter account that belongs to everyone. 
           </p>
@@ -75,8 +93,9 @@ class App extends Component {
             href="https://twitter.com/WeeTweet17"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            WeeTweet Account
+          > 
+           {/*<img src={logo} alt = "twitterlogo"/>*/}
+          WeeTweet Account
           </a>
         
         <p className = "Text-twitter-blue">{this.state.response}</p>
@@ -88,6 +107,7 @@ class App extends Component {
             type="text"
             value={this.state.post}
             onChange={e => this.setState({ post: e.target.value })}
+            onInput={e => this.setState({charCountText: e.target.value.length})}
           /> 
           <p style = {{color : "black"}}>Name or Initials (optional)</p>
           <input
@@ -95,11 +115,13 @@ class App extends Component {
             type="text"
             value={this.state.sender}
             onChange={e => this.setState({ sender: e.target.value })}
+            onInput={e => this.setState({charCountSender: e.target.value.length})}
           /> 
-  
-          <button className= "Tweet-btn" type="submit">Tweet it!</button>
+          
+          <p style = {{color : countColor}}> Count: {this.state.charCountText + this.state.charCountSender}</p>
+          <button disabled = {this.state.charCountText <= 0 ? true:false} className= "Tweet-btn" type="submit">Tweet it!</button>
         </form>
-
+        
         <p>{this.state.responseToPost}</p>
         </header>
       </div> 
