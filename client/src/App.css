@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+  background: url(br.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
+
 }
 
 .App-header {
@@ -28,6 +32,7 @@
   font-size: 50px;
 }
 
+
 .Tweet-btn {
 
   border: none;
@@ -39,11 +44,13 @@
   cursor: pointer;
   width: 50%;
   font-size: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
 
 }
 
 .Input-box-tweet {
- width: 100%;
+  width: 100%;
   height: 100px;
   padding: .5px 20px;
   box-sizing: border-box;
@@ -52,6 +59,7 @@
   background-color: #f8f8f8;
   resize: none;
   font-size: 20px
+  
 }
 
 .Input-box-sender {
@@ -65,6 +73,15 @@
   resize: none;
   font-size: 20px
 }
+
+h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+
+p { color: #111; font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 32px; margin: 40px 0 40px; text-align: center; }
+
+.count { color: #111; font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 300; line-height: 32px; margin: 40px 0 40px; text-align: center; }
+
+
 
 .App-link {
   color: #1da1f2;

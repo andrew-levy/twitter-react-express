@@ -75,40 +75,29 @@ class App extends Component {
   render() {
 
     const countColor = this.state.charCountSender + this.state.charCountText >= 280 ? 'red' : 'black'
-
+    const opac = this.state.charCountText <= 0 ? .6:1
     return (
       
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p className = "Text-title"> WeeTweet</p>
+          <h1>weetweet. </h1>
           <p style ={{color : "black"}} >
-            Hello! Welcome to WeeTweet, the first twitter account that belongs to everyone. 
+            The first twitter account that belongs to everyone. 
           </p>
-           <p style ={{color : "black"}} >
-            
-          </p>
-          <a
-            className="App-link"
-            href="https://twitter.com/WeeTweet17"
-            target="_blank"
-            rel="noopener noreferrer"
-          > 
-           {/*<img src={logo} alt = "twitterlogo"/>*/}
-          WeeTweet Account
-          </a>
-        
         <p className = "Text-twitter-blue">{this.state.response}</p>
         <form onSubmit={this.handleSubmit}>
           <p style = {{color : "black"}}>What do you want to tell the world?
           </p>
-          <input
-            className="Input-box-tweet"
-            type="text"
-            value={this.state.post}
-            onChange={e => this.setState({ post: e.target.value })}
-            onInput={e => this.setState({charCountText: e.target.value.length})}
-          /> 
+
+           <textarea className="Input-box-tweet" 
+           rows="4" 
+           cols="50" 
+           value={this.state.post} 
+           onChange={e => this.setState({ post: e.target.value })}
+          onInput={e => this.setState({charCountText: e.target.value.length})}>
+          </textarea>
+         
           <p style = {{color : "black"}}>Name or Initials (optional)</p>
           <input
             className="Input-box-sender"
@@ -117,12 +106,25 @@ class App extends Component {
             onChange={e => this.setState({ sender: e.target.value })}
             onInput={e => this.setState({charCountSender: e.target.value.length})}
           /> 
-          
-          <p style = {{color : countColor}}> Count: {this.state.charCountText + this.state.charCountSender}</p>
-          <button disabled = {this.state.charCountText <= 0 ? true:false} className= "Tweet-btn" type="submit">Tweet it!</button>
+        
+          <p style = {{color: countColor}} className="count"> Count: {this.state.charCountText + this.state.charCountSender}</p>
+          <button disabled = {this.state.charCountText <= 0 ? true:false} 
+          className= "Tweet-btn" type="submit" 
+          style = {{opacity: opac}}>
+            Tweet it!
+          </button>
         </form>
         
         <p>{this.state.responseToPost}</p>
+
+          <a
+            className="App-link"
+            href="https://twitter.com/WeeTweet17"
+            target="_blank"
+            rel="noopener noreferrer"> 
+                     <p>See your tweet on Twitter</p>
+          </a>
+
         </header>
       </div> 
 
