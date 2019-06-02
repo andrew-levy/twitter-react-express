@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import earth from './earth.svg';
 import rt from './rt.svg';
-import mail from './mail.svg';
+import upload from './upload.svg';
 import like from './like.svg';
 import buble from './buble.svg';
 
@@ -78,12 +78,15 @@ class App extends Component {
 
   render() {
 
-    const countColor = this.state.charCountSender + this.state.charCountText >= 280 ? 'red' : 'black'
+    const countColor = this.state.charCountSender + this.state.charCountText >= 280 ? 'red' : 'white'
     const opac = this.state.charCountText <= 0 ? .6:1
+
     return (
+
       
       <div className="App">
         <header className="App-header">
+
           {/*<img src={logo} className="App-logo" alt="logo" />*/}
           <h1>weetweet. </h1>
           <p style = {{textAlign :'left'}} className="description">
@@ -109,14 +112,14 @@ class App extends Component {
             <img src={buble} alt="buble" style= {{width:'20px', height:'20px', float: "left", margin: '5px 20px 0px'}}/>
              <img src={rt} alt="rt" style= {{width:'20px', height:'20px', float: "left", margin: '5px 20px 0px'}}/>
              <img src={like} alt="like" style= {{width:'20px', height:'20px', float: "left", margin: '5px 20px 0px'}}/>
-             <img src={mail} alt="mail" style= {{width:'20px', height:'20px', float: "left", margin: '5px 20px 0px'}}/>
+             <img src={upload} alt="mail" style= {{width:'20px', height:'20px', float: "left", margin: '5px 20px 0px'}}/>
              <p className="fakeTweetTxt" style = {{margin: '0.5px 10px 1px', textAlign: "left", fontSize : '15px', float: "right"}}> 19 May 2019 </p>
 
           </p>
           
         {/*<p className = "Text-twitter-blue">{this.state.response}</p>*/}
         <form onSubmit={this.handleSubmit}>
-          <p style = {{color : "black"}}>What do you want to tell the world?
+          <p >What do you want to tell the world?
           </p>
 
            <textarea className="Input-box-tweet" 
@@ -129,7 +132,7 @@ class App extends Component {
           
           </textarea>
          
-          <p style = {{color : "black"}}>Name or Initials (optional)</p>
+          <p >Name or Initials (optional)</p>
           <input
             className="Input-box-sender"
             type="text"

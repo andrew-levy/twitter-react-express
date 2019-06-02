@@ -1,8 +1,6 @@
 .App {
   text-align: center;
-  /*background: url(br.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;*/
+
 }
 
 .App-logo {
@@ -21,6 +19,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding-bottom: 10px;
+   /*background: linear-gradient(to right, #b881d6, #aec4ee);*/
+  background: url(br2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Text-twitter-blue {
@@ -51,7 +53,7 @@
 
 .Input-box-tweet {
   width: 100%;
-  height: 100px;
+  height: 150px;
   padding: .5px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -77,22 +79,22 @@
   
 }
 
-h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 80px; font-weight: bold; letter-spacing: -1px; line-height: .2; margin: 100px 200px 40px; text-align: center}
+h1 { color: white; font-family: 'Helvetica Neue', sans-serif; font-size: 90px; font-weight: bold; letter-spacing: -1px; line-height: .2; margin: 100px 200px 40px; text-align: center}
 
 
-p { color: #111; font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 30px; margin: 40px 0 40px; text-align: center; }
+p { color:white; font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 30px; margin: 40px 0 40px; text-align: center; }
 .description { 
 
     border-radius: 25px;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 20px; 
   width: 500px;
   height: 270px;  
-  color: #111; font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: bold; line-height: 30px; margin: 100px 0 90px; text-align: center; }
+  color: white; font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: bold; line-height: 30px; margin: 100px 0 90px; text-align: center; }
 
-.count { color: #111; font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 300; line-height: 32px; margin: 40px 0 40px; text-align: center; }
+.count { color: white; font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 300; line-height: 32px; margin: 40px 0 40px; text-align: center; }
 
-.fakeTweetTxt { color: #111; font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: -1px;}
+.fakeTweetTxt { color: white; font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: -1px;}
 
 .App-link {
   color: #1da1f2;

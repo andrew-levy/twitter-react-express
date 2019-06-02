@@ -19,6 +19,7 @@
     "child_process": "^1.0.2",
     "express": "^4.16.4",
     "nodemon": "^1.19.0",
+    "react-particles-js": "^2.6.0",
     "twit": "^2.2.11"
   },
   "devDependencies": {
