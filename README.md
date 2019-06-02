@@ -1,8 +1,11 @@
 # Twitter React App with Node Express Backend
 
+See the deployed version of this web app here!
+https://weetweet.herokuapp.com/
+
 ## Usage
 
-First install Brew and Yarn:
+First install Brew and Yarn (if needed):
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

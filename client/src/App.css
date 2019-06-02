@@ -40,7 +40,7 @@
   background-color: #1da1f2;
   padding: 16px 32px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 4px 0px 0px;
   cursor: pointer;
   width: 50%;
   font-size: 20px;
@@ -58,7 +58,8 @@
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
-  font-size: 20px
+  font-size: 20px;
+  margin: 0px 0px 0px;
   
 }
 
@@ -71,17 +72,27 @@
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
-  font-size: 20px
+  font-size: 20px;
+    margin: 0px 0px 0px;
+  
 }
 
-h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 80px; font-weight: bold; letter-spacing: -1px; line-height: .2; margin: 100px 200px 40px; text-align: center}
 
 
-p { color: #111; font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 32px; margin: 40px 0 40px; text-align: center; }
+p { color: #111; font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 30px; margin: 40px 0 40px; text-align: center; }
+.description { 
+
+    border-radius: 25px;
+  border: 1px solid black;
+  padding: 20px; 
+  width: 500px;
+  height: 270px;  
+  color: #111; font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: bold; line-height: 30px; margin: 100px 0 90px; text-align: center; }
 
 .count { color: #111; font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 300; line-height: 32px; margin: 40px 0 40px; text-align: center; }
 
-
+.fakeTweetTxt { color: #111; font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: -1px;}
 
 .App-link {
   color: #1da1f2;
