@@ -94,16 +94,16 @@ class App extends Component {
           <h1>weetweet. </h1>
           <p style = {{textAlign :'left'}} className="description">
 
-             <img src={earth} alt="avatar" style= {{width:'30px', height:'30px', float: "left"}}/>
+             <img src={earth} alt="avatar" style= {{width:'35px', height:'35px', float: "left"}}/>
              <p style = {{margin: '0.5px 10px 1px', textAlign: "left", fontSize : '15px', float: "left", fontWeight: "bold"}}> @WeeTweet17 </p>
              <img src={logo} alt="avatar" style= {{width:'35px', height:'35px', float: "right", margin: '-5px 0px .5px'}}/>
              <p style={{margin: '50px 0px 10px', clear: 'both', fontSize: '23px', fontWeight: "bold"}}>The first twitter account that belongs to everyone. </p>
             <ol style={{margin: '.5px 40px 10px'}}>
               
-              <li>Type what you want to tell the world</li>
-              <li>Add your name/initials or be anonymous</li>
-              <li>Press 'Tweet it!'</li>
-              <li>View your tweet  <a
+              <li style={{opacity: '1'}}>Type what you want to tell the world</li>
+              <li style={{opacity: '1'}}>Add your name/initials or be anonymous</li>
+              <li style={{opacity: '1'}}>Press 'Tweet it!'</li>
+              <li style={{opacity: '1'}}>View your tweet  <a
             className="App-link"
             href="https://twitter.com/WeeTweet17"
             target="_blank"
@@ -167,6 +167,7 @@ class App extends Component {
 
         </header>
       </div> 
+
 
 
 
