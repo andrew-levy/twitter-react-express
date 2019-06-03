@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
-import logo from './logo.svg';
-import earth from './earth.svg';
-import rt from './rt.svg';
-import upload from './upload.svg';
-import like from './like.svg';
-import buble from './buble.svg';
+
+import logo from './img/logo.svg';
+import earth from './img/earth.svg';
+import rt from './img/rt.svg';
+import upload from './img/upload.svg';
+import like from './img/like.svg';
+import buble from './img/buble.svg';
 
 import './App.css';
 
@@ -22,8 +23,7 @@ class App extends Component {
     responseToPost: '',
     sender: '',
     charCountText: 0,
-    charCountSender: 0,
-    goodToSubmit : false
+    charCountSender: 0
   };
 
   // reset the textboxes on subit
@@ -31,6 +31,9 @@ class App extends Component {
 
     this.setState({post: ""});
     this.setState({sender: ""});
+    this.setState({charCountSender: 0});
+    this.setState({charCountText: 0});
+    
 
   }
 
@@ -93,8 +96,8 @@ class App extends Component {
 
              <img src={earth} alt="avatar" style= {{width:'30px', height:'30px', float: "left"}}/>
              <p style = {{margin: '0.5px 10px 1px', textAlign: "left", fontSize : '15px', float: "left", fontWeight: "bold"}}> @WeeTweet17 </p>
-             <img src={logo} alt="avatar" style= {{width:'50px', height:'50px', float: "right", margin: '-12px -10px .5px'}}/>
-             <p style={{margin: '2px 0px 10px', clear: 'both', fontSize: '23px', fontWeight: "bold"}}>The first twitter account that belongs to everyone. </p>
+             <img src={logo} alt="avatar" style= {{width:'35px', height:'35px', float: "right", margin: '-5px 0px .5px'}}/>
+             <p style={{margin: '50px 0px 10px', clear: 'both', fontSize: '23px', fontWeight: "bold"}}>The first twitter account that belongs to everyone. </p>
             <ol style={{margin: '.5px 40px 10px'}}>
               
               <li>Type what you want to tell the world</li>
@@ -107,6 +110,7 @@ class App extends Component {
             rel="noopener noreferrer"> 
                      here
           </a></li>
+          
 
             </ol>
             <img src={buble} alt="buble" style= {{width:'20px', height:'20px', float: "left", margin: '5px 20px 0px'}}/>
@@ -163,6 +167,8 @@ class App extends Component {
 
         </header>
       </div> 
+
+
 
     );
   }

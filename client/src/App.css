@@ -20,9 +20,9 @@
   color: white;
   padding-bottom: 10px;
    /*background: linear-gradient(to right, #b881d6, #aec4ee);*/
-  background: url(br2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(img/br.gif);
+  background-repeat: repeat;
+  background-size: auto;
 }
 
 .Text-twitter-blue {

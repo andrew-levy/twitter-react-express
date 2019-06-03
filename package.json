@@ -19,6 +19,8 @@
     "child_process": "^1.0.2",
     "express": "^4.16.4",
     "nodemon": "^1.19.0",
+    "particlesjs": "^2.2.3",
+    "react-particle-animation": "^1.0.1",
     "react-particles-js": "^2.6.0",
     "twit": "^2.2.11"
   },
