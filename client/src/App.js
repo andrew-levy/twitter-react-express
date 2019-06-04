@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
-
+import { render } from "react-dom";
+import Particles from './Particles'
 import logo from './img/logo.svg';
 import earth from './img/earth.svg';
 import rt from './img/rt.svg';
@@ -80,17 +80,19 @@ class App extends Component {
 
 
   render() {
+     
+      
 
     const countColor = this.state.charCountSender + this.state.charCountText >= 280 ? 'red' : 'white'
-    const opac = this.state.charCountText <= 0 ? .6:1
+    const opac = (this.state.charCountText <= 0  && this.state.post.trim() === "") ? .6:1
 
     return (
 
-      
-      <div className="App">
-        <header className="App-header">
 
-          {/*<img src={logo} className="App-logo" alt="logo" />*/}
+        <div className="App-page">
+        
+        <Particles/>
+
           <h1>weetweet. </h1>
           <p style = {{textAlign :'left'}} className="description">
 
@@ -132,7 +134,7 @@ class App extends Component {
            placeholder="When the zombie apocalypse happens, you’ll be glad you bought a flamethrower. Works against hordes of the undead or your money back!"
            value={this.state.post} 
            onChange={e => this.setState({ post: e.target.value })}
-          onInput={e => this.setState({charCountText: e.target.value.length})}>
+           onInput={e => this.setState({charCountText: e.target.value.length})}>
           
           </textarea>
          
@@ -164,9 +166,10 @@ class App extends Component {
             rel="noopener noreferrer"> 
                      <p>See your tweet on Twitter</p>
           </a>
+          
+        </div>
+ 
 
-        </header>
-      </div> 
 
 
 
