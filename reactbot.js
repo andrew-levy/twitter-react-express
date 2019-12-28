@@ -4,13 +4,12 @@ var args = process.argv
 
 var T = new Twit({
 
-  consumer_key:         'Qu2IjLLOmjQuA3hF8Lh8bkHFL',
-  consumer_secret:      'yDgvzl7uvjY7lG8qCxvDslKb4kpBqOsLrCwlR9VMpXOn1HOR9y',
-  access_token:         '1131194121836814337-QaDcJYCXaaMuueIej4i1urnz5f2jgY',
-  access_token_secret:  's1Wabivuq0I6VCdT0L48fEW1R0rm3zQ3oP76zuJr5kHjz',
+  consumer_key:         '',
+  consumer_secret:      '',
+  access_token:         '',
+  access_token_secret:  '',
   
 })
-
 
 var finalTweet = "";
 parseArgs();
