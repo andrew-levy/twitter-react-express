@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -14,9 +15,9 @@ var Twit = require('twit')
 var T = new Twit({
 
   consumer_key:         'Qu2IjLLOmjQuA3hF8Lh8bkHFL',
-  consumer_secret:      'yDgvzl7uvjY7lG8qCxvDslKb4kpBqOsLrCwlR9VMpXOn1HOR9y',
   access_token:         '1131194121836814337-QaDcJYCXaaMuueIej4i1urnz5f2jgY',
-  access_token_secret:  's1Wabivuq0I6VCdT0L48fEW1R0rm3zQ3oP76zuJr5kHjz',
+  consumer_secret:      process.env.consumer_secret,
+  access_token_secret:  process.env.access_token_secret,
   
 })
 
@@ -30,14 +31,24 @@ app.get('/api/hello', (req, res) => {
 });
 
 app.post('/api/world', (req, res) => {
-  console.log(req.body);
+
+  console.log("body: " + req.body);
   res.send(
-    `Thanks for tweeting: ${req.body.post}`,
+    `Thanks for tweeting: ${req.body.get("text")}`,
   );
 
 // tweet
+  // var mediaID = '';
+  // T.post('media/upload', req.body.get("img"), uploaded)
+
+  // function uploaded(err, data, response) {
+  //   mediaID = data.media_id_string;
+  // }
+
   var tweet = { 
-			status:  `${req.body.post}`
+    	status:  `${req.body.post}`,
+			// status:  `${req.body.get("img")}`,
+      // media_ids: [mediaID]
 	}
 
 	T.post('statuses/update', tweet, tweeted);
